@@ -36,7 +36,7 @@
                 <a href="#" class="icon-twitter">Physique</a>
                 <ul>
                     <li>
-                        <a href="P3.php">Physique 3eme</a>
+                        <a href="P3.php">Physique 3 eme</a>
                     </li>
                     <li>
                         <a href="P4.php">Physique 4eme</a>
