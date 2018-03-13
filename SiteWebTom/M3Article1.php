@@ -27,8 +27,8 @@ if (!isset($_SESSION['login'])) {
 
     while ($donnees= $rep->fetch())
     {
-        echo '<p>'. htmlspecialchars($donnees['login'] ). ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
-    }
+        $login = $donnees['login'];
+        echo '<p>'. "<a href='profile.php?login=$login'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';    }
     $rep->closeCursor();   
 
     ?>

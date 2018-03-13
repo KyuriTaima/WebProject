@@ -25,12 +25,14 @@ if (!isset($_SESSION['login'])) {
     }
 
 
-    $req= $bdd->prepare('SELECT corpsTexte FROM articles WHERE login= ?  ');
+    $req= $bdd->prepare('SELECT corpsTexte, login, id FROM articles WHERE login= ?  ');
     $req ->execute(array($_SESSION['login']));
 
     while ($donnees = $req->fetch())
     {
-        echo '<p>'. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
+        
+        $login = $donnees['login'];
+        echo '<p>'. "<a href='profile.php?login=$login'>". "id= ". $donnees['id'].  "       ".  htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
     }
     $req->closeCursor();
     ?>

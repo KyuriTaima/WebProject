@@ -18,7 +18,7 @@
     <nav id="colorNav">
         <ul>
             <li  class="green"> <!--Une case du menu -->
-                <a href="Entree.php" class="icon-home">Acceuil</a> <!--Sous menu -->
+                <a href="Entree.php" class="icon-home">Accueil</a> <!--Sous menu -->
                
             <li class="red">
                 <a href="#" class="icon-cogs">Maths</a>
@@ -36,10 +36,10 @@
                 <a href="#" class="icon-twitter">Physique</a>
                 <ul>
                     <li>
-                        <a href="P3.php">Physique 3 eme</a>
+                        <a href="P3.php">Niveau 3eme</a>
                     </li>
                     <li>
-                        <a href="P4.php">Physique 4eme</a>
+                        <a href="P4.php">Niveau 4eme</a>
                     </li>
 
                 </ul>
