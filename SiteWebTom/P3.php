@@ -23,12 +23,13 @@ if (!isset($_SESSION['login'])) {
         die('Erreur : '.$e->getMessage());
     }    
 
-    $rep =  $bdd->query('SELECT corpsTexte, login FROM articles WHERE categorie="P3"');
+    $rep =  $bdd->query('SELECT corpsTexte, login, id FROM articles WHERE categorie="P3"');
 
     while ($donnees= $rep->fetch())
     {
         $login = $donnees['login'];
-        echo '<p>'. "<a href='profile.php?login=$login'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';    }
+        $id = $donnees['id'];
+        echo '<p>'. "<a href='pageArticle.php?id=$id'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';    }
     $rep->closeCursor();   
 
     ?>

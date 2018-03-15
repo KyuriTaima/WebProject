@@ -14,6 +14,7 @@ if (!isset($_SESSION['login'])) {
 
 <body>
     <?php
+    $id = $_GET['id'];
     try
     {
         $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
@@ -23,14 +24,17 @@ if (!isset($_SESSION['login'])) {
         die('Erreur : '.$e->getMessage());
     }    
 
-    $rep =  $bdd->query('SELECT corpsTexte, login, id FROM articles WHERE categorie="P4"');
+    $rep =  $bdd->query("SELECT corpsTexte, login, categorie FROM articles WHERE id = '$id'");
 
-    while ($donnees= $rep->fetch())
-    {
-        $login = $donnees['login'];
-        $id = $donnees['id'];
-        echo '<p>'. "<a href='pageArticle.php?id=$id'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
-    }
+    $donnees= $rep->fetch();
+        ?>
+        <div id=article>
+        	<h1><?php echo $donnees['login']; ?></h1><br />
+        	<p>
+        		<?php echo $donnees['corpsTexte']; ?>
+        	</p>        	
+        </div>
+    <?php
     $rep->closeCursor();   
 
     ?>
