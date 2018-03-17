@@ -34,3 +34,12 @@ p {
 		border-style: solid;
 		border-color: rgb(0, 0, 0);
 }
+#article
+{
+    display: flex;
+    align-content: center;
+    flex-wrap: wrap;
+    flex-direction: column;
+    margin: auto;
+    background-color: rgba(177,177,177,0.7);
+}

@@ -24,10 +24,10 @@
                 <a href="#" class="icon-cogs">Maths</a>
                 <ul>
                     <li>
-                        <a href="M3Article1.php">Niveau 3eme</a>
+                        <a href="categorie.php?cat=M3">Niveau 3eme</a>
                     </li>
                     <li>
-                        <a href="M4.php">Niveau 4eme</a>
+                        <a href="categorie.php?cat=M4">Niveau 4eme</a>
                     </li>
                    
                 </ul>
@@ -36,10 +36,10 @@
                 <a href="#" class="icon-twitter">Physique</a>
                 <ul>
                     <li>
-                        <a href="P3.php">Niveau 3eme</a>
+                        <a href="categorie.php?cat=P3">Niveau 3eme</a>
                     </li>
                     <li>
-                        <a href="P4.php">Niveau 4eme</a>
+                        <a href="categorie.php?cat=P4">Niveau 4eme</a>
                     </li>
 
                 </ul>

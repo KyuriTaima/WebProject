@@ -29,13 +29,14 @@ catch(Exception $e)
 }
 
 
-$reponse = $bdd->query('SELECT corpsTexte, login , categorie FROM articles');
+$reponse = $bdd->query('SELECT corpsTexte, login , id, categorie FROM articles');
 while ($donnees = $reponse->fetch())
 {
    
    $corps = htmlspecialchars($donnees['corpsTexte']);
    $login = $donnees['login'];
-    echo '<p>'. "<a href='profile.php?login=$login'> $login " . ' -- '. $donnees['categorie'] . ' -- '. $corps . '<br />' . '</p>';
+   $id = $donnees['id'];
+   echo '<p>'. "<a href='pageArticle.php?id=$id'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
 }
 $reponse->closeCursor();
 ?>
