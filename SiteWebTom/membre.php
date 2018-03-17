@@ -18,8 +18,9 @@
         }
 
         if(isset($_POST['pass']) && !empty($_POST['pass']) && isset($_POST['pass_confirm']) && !empty($_POST['pass_confirm']) ) {
+            $hashed_password = password_hash($_POST['pass'], PASSWORD_DEFAULT);
             $req_update = $bdd->prepare('UPDATE membre SET pass_md5=? WHERE login =?');
-            $req_update ->execute(array($_POST['pass'],$_SESSION['login']));
+            $req_update ->execute(array($hashed_password,$_SESSION['login']));
 
         }
 
