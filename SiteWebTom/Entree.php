@@ -12,6 +12,7 @@
     
     <title>Menu</title>
 
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
     <link rel="stylesheet" href="assets/style.css">
 
 </head>
@@ -30,16 +31,41 @@ catch(Exception $e)
 
 
 $reponse = $bdd->query('SELECT corpsTexte, login , id, categorie FROM articles');
+
+?> 
+ <div class="container">
+<?php 
 while ($donnees = $reponse->fetch())
 {
-   
-   $corps = htmlspecialchars($donnees['corpsTexte']);
-   $login = $donnees['login'];
-   $id = $donnees['id'];
-   echo '<p>'. "<a href='pageArticle.php?id=$id'> $login " . ' -- '. htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
+  ?>
+
+    <article class="col-md-4 col-xs-12 col-sm-6">
+
+        <div class="panel panel-info"> 
+            <div id="banniere_titre">
+            <h4> Titre de l'article </h4>
+            </div>  
+
+      <?php 
+        $corps = htmlspecialchars($donnees['corpsTexte']);
+        $login = $donnees['login'];
+        $id = $donnees['id'];
+      ?> 
+
+      <div id="banniere_texte">
+        <?php echo $corps; ?>
+      </div>
+      
+        </div>
+    <p class="text-right"> <strong><?php  echo "<a href='pageArticle.php?id=$id'>" ?> Lire l'article de <?php echo $login ?>   </a>  </strong> </p>    
+    </article>
+
+  <?php 
 }
 $reponse->closeCursor();
-?>
+
+?> 
+</div>
    
 </body>
 </html>
