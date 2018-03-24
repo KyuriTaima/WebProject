@@ -28,12 +28,6 @@ input[type= password] {
     margin-top: 10px ;
 }
 
-p {
-    margin:50px 700px 100px 400px;
-    border-width: large;
-		border-style: solid;
-		border-color: rgb(0, 0, 0);
-}
 #article
 {
     display: flex;

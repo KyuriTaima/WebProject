@@ -1,3 +1,9 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Supprimer Article</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
+</head>
 <?php
     include("sesArticles.php");
     
@@ -19,8 +25,6 @@
 
     ?>
 
-<html>
-
     <body>
     
      <form action="supprimerArticle2.php" method="post"><br/>
@@ -29,5 +33,4 @@
      <input type="submit" name="envoie2" value="envoie2"><br/>
      </form>
      </body>
-
-    </html>
+     </html>

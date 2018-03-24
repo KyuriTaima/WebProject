@@ -9,11 +9,12 @@
     <title>Menu</title>
     <!--Ouverture de la feuille de style CSS -->
     <link rel="stylesheet" href="assets/styleAcceuil.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     
 </head>
 
 
-<body>
+<body class="col-md-12">
     <!--Création de la classe nav qui pointe sur tout le menu -->
     <nav id="colorNav">
         <ul>
