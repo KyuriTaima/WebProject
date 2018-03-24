@@ -14,7 +14,7 @@
 </head>
 
 
-<body class="col-md-12">
+<body>
     <!--Création de la classe nav qui pointe sur tout le menu -->
     <nav id="colorNav">
         <ul>

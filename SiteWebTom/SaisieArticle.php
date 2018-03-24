@@ -30,6 +30,7 @@ if (isset($_POST['envoie']) && $_POST['envoie'] == 'envoie') {
 <html>
 <head>
     <link rel="stylesheet" href="assets/style.css">
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <body>
 	<div class="row">
