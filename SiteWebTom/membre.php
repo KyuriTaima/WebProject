@@ -49,35 +49,40 @@
     <html>
     <head>
     <title>Espace membre</title>
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
       
     <body>
-    
-    Bienvenue <?php echo ($_SESSION['login']); ?>!<br />
+        <div class="row">
+            <span class="col-md-offset-4 col-md-4"><h1>Bienvenue <?php echo ($_SESSION['login']); ?>!</h1><br /></span>
+        </div>
 
     
+        <div class="row">
+            <div class=" col-md-offset-4 col-md-4">
+            <form action="membre.php" method="post">
+                <p>
 
-    <form action="membre.php" method="post">
-        <p>
+                 <h2>Voulez vous changer des informations? </h2><br />
+            
+                 
+                 Mot de passe : <input type="password" name="pass"><br /><br />
+                 Confirmation du mot de passe : <input type="password" name="pass_confirm" ><br /><br />
+                 email: <input type="text" name="email" ><br />
 
-         Voulez vous changer des informations? <br />
-    
-         
-         Mot de passe : <input type="password" name="pass"><br />
-         Confirmation du mot de passe : <input type="password" name="pass_confirm" ><br />
-         email: <input type="text" name="email" ><br />
+                 Catégorie socio-professionelle: 
+                <input type="radio" name="niveau" value=1>College
+                <input type="radio" name="niveau" value=2>Lycée
+                <input type="radio" name="niveau" value=3>Etudes supérieures
+                <input type="radio" name="niveau" value=4>Diplomé
+                <input type="radio" name="niveau" value=5>Autre
+                
 
-         Catégorie socio-professionelle: 
-        <input type="radio" name="niveau" value=1>College
-        <input type="radio" name="niveau" value=2>Lycée
-        <input type="radio" name="niveau" value=3>Etudes supérieures
-        <input type="radio" name="niveau" value=4>Diplomé
-        <input type="radio" name="niveau" value=5>Autre
-        
-
-        
-        <input type="submit" name="changement" value="Go">
-        </p>
+                
+                <input type="submit" name="changement" value="Go">
+                </p>
+            </form>
+        </div>
     
     </body>
     </html>

@@ -8,7 +8,8 @@ if (!isset($_SESSION['login'])) {
 
 <head>
     <title>My document</title>
-    <link rel="stylesheet" href="assets/style.css" />  
+    <link rel="stylesheet" href="assets/style.css" /> 
+    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
 
 </head>
 
@@ -29,12 +30,14 @@ if (!isset($_SESSION['login'])) {
 
     $donnees= $rep->fetch();
         ?>
-        <div id=article>
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
         	<h1><?php echo $donnees['login']; ?></h1><br />
         	<p>
         		<?php echo $donnees['corpsTexte']; ?>
         	</p>        	
         </div>
+        <div class="col-md-4"></div>
     <?php
     $rep->closeCursor();  
     
