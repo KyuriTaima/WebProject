@@ -1,5 +1,5 @@
 <?php 
- include("Acceuil.php");
+ include("Accueil.php");
     // on teste si le visiteur a soumis le formulaire
     if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
        // on teste l'existence de nos variables. On teste également si elles ne sont pas vides
@@ -54,7 +54,7 @@
     <html>
     <head>
     <title>Inscription</title>
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="assets/styleInscription.css">
     <?php  ?>
 
     </head>
@@ -63,9 +63,9 @@
     <!--Ci dessous les forms qui permettent au PHP de récuperer les infos-->
         <form action="inscription.php" method="post">
         <p>
-
+       
          Inscription à l'espace membre :<br />
-    
+
          Login : <input type="text" name="login" ><br />
          Mot de passe : <input type="password" name="pass"><br />
          Confirmation du mot de passe : <input type="password" name="pass_confirm" ><br />
@@ -76,13 +76,30 @@
         <input type="radio" name="niveau" value=3>Etudes supérieures
         <input type="radio" name="niveau" value=4>Diplomé
         <input type="radio" name="niveau" value=5>Autre
-        
+       
 
-        
+
         <input type="submit" name="inscription" value="Inscription">
         </p>
    
    
     </form>
+    
+  <form class="px-4 py-3">
+    <div class="form-group">
+      <label for="exampleDropdownFormEmail1">Email</label>
+      <input type="email" class="form-control" id="exampleDropdownFormEmail1" placeholder="email@example.com">
+    </div>
+    <div class="form-group">
+      <label for="exampleDropdownFormPassword1">Password</label>
+      <input type="password" class="form-control" id="exampleDropdownFormPassword1" placeholder="Password">
+    </div>
+    
+    <button type="submit" class="btn btn-primary">Sign in</button>
+  </form>
+  <div class="dropdown-divider"></div>
+  <a class="dropdown-item" href="#">New around here? Sign up</a>
+  <a class="dropdown-item" href="#">Forgot password?</a>
+
     </body>
     </html>

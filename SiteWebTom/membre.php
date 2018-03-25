@@ -1,5 +1,5 @@
 <?php //Page d'acceuil des membres
-     include("Acceuil.php"); 
+     include("Accueil.php"); 
     
 
      if (!isset($_SESSION['login'])) {
