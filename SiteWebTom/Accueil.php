@@ -1,41 +1,54 @@
 <?php
     session_start(); 
     ?>
-<html>
+<html lang="en">
 <style></style>
-
+<!DOCTYPE html>
 <head>
     
-    <title>Menu</title>
+<title>Bootstrap Example</title>
     <!--Ouverture de la feuille de style CSS -->
     <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.js">
     <link rel="stylesheet" href="assets/style.css">
-    <script src="https://freakspot.net/theme/js/jquery-3.1.1.min.js"></script>
-    <script src="bootstrap/js/bootstrap.js"></script>
+
+    <meta charset="utf-8">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
     
+
+    
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+
 
    <!-- <link rel="stylesheet" href="assets/styleAcceuil.css"> -->
     
-</head>
 
 
-<body>
-    <!--Création de la classe nav qui pointe sur tout le menu -->
 
-<nav class="navbar ">
-  <div class="container">
+<nav class="navbar navbar-expand-lg navbar-inverse">
+
+
+   <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+
+<span class="icon-bar"></span>
+
+<span class="icon-bar"></span>
+
+<span class="icon-bar"></span>                        
+
+</button>
+  
+  <div class="collapse navbar-collapse" id="myNavbar">
     <div class="navbar-header">
     </div>
 
 
     <ul class="nav navbar-nav">
     
-    
-    <button class="btn btn-default btn-lg "  type="button" >
-    <a href="Accueil.php"></a> Entraide
-    </button>
-
+    <input type="button" class="btn btn-default btn-lg " value="Entraide" onclick="location.href = 'Entree.php'">
     
     <div class="btn-group">
       <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMathsButton" data-toggle="dropdown" >
@@ -48,7 +61,7 @@
     <a class="dropdown-item" href="categorie.php?cat=M4">Niveau 4eme<br/></a>
 
      </div>
-</div>
+      </div>
     <div class="btn-group"> 
     <button class="btn btn-warning dropdown-toggle btn-lg" type="button" id="dropdownPhysiqueButton" data-toggle="dropdown" >
       Physique
@@ -115,6 +128,7 @@
      </div>
     </ul>
   </div>
+  
 </nav>
 
 
@@ -126,3 +140,19 @@
 
 
 </html>
+
+
+
+
+
+
+
+ 
+
+
+​
+
+  
+
+​
+
