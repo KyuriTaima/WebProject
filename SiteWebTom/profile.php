@@ -1,5 +1,5 @@
 <?php /* ouvre le menu et la session Si l'utilisateur n'est pas connecté il est redirigé vers la page de connection */
-    include("Acceuil.php");
+    include("Accueil.php");
     if (!isset($_SESSION['login'])) {
        header ('Location: index.php');
        exit(); 

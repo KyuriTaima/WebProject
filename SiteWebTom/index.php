@@ -55,7 +55,7 @@ else {
 </head>
 
 <body>
-  <?php include("Acceuil.php"); ?>
+  <?php include("Accueil.php"); ?>
 
   <!-- ci dessous les forms qui permetteront au php de récupérer les infos -->
   <form action="index.php" method="post">
