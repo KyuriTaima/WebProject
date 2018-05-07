@@ -1,5 +1,7 @@
 <?php /* ouvre le menu et la session Si l'utilisateur n'est pas connecté il est redirigé vers la page de connection */
+     ob_start();
     include("Accueil.php");
+   
     if (!isset($_SESSION['login'])) {
        header ('Location: index.php');
        exit(); 
@@ -22,7 +24,7 @@
 
 try
 {
-    $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', 'root',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
 }
 catch(Exception $e)
 {
@@ -31,12 +33,13 @@ catch(Exception $e)
 
 
 $reponse = $bdd->query('SELECT corpsTexte, login , id, categorie FROM articles');
-
+ob_end_flush();
 ?> 
  <div class="container">
 <?php 
 while ($donnees = $reponse->fetch())
 {
+
   ?>
 
     <article class="col-md-4 col-xs-12 col-sm-6">
@@ -59,7 +62,7 @@ while ($donnees = $reponse->fetch())
         </div>
     <p class="text-right"> <strong><?php  echo "<a href='pageArticle.php?id=$id'>" ?> Lire l'article de <?php echo $login ?>   </a>  </strong> </p>    
     </article>
-
+    
   <?php 
 }
 $reponse->closeCursor();

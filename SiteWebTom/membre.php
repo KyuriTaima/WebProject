@@ -1,6 +1,7 @@
 <?php //Page d'acceuil des membres
+     
+     ob_start();
      include("Accueil.php"); 
-    
 
      if (!isset($_SESSION['login'])) {
          header ('Location: index.php');
@@ -10,7 +11,7 @@
      if (isset($_POST['changement']) && $_POST['changement'] == 'Go') {
         try
         {
-            $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+            $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
         }
         catch(Exception $e)
         {
@@ -38,7 +39,7 @@
 
 }
 
-
+ob_end_flush();
         ?>
 
 
@@ -49,40 +50,35 @@
     <html>
     <head>
     <title>Espace membre</title>
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
     </head>
       
     <body>
-        <div class="row">
-            <span class="col-md-offset-4 col-md-4"><h1>Bienvenue <?php echo ($_SESSION['login']); ?>!</h1><br /></span>
-        </div>
+    
+    Bienvenue <?php echo ($_SESSION['login']); ?>!<br />
 
     
-        <div class="row">
-            <div class=" col-md-offset-4 col-md-4">
-            <form action="membre.php" method="post">
-                <p>
 
-                 <h2>Voulez vous changer des informations? </h2><br />
-            
-                 
-                 Mot de passe : <input type="password" name="pass"><br /><br />
-                 Confirmation du mot de passe : <input type="password" name="pass_confirm" ><br /><br />
-                 email: <input type="text" name="email" ><br />
+    <form action="membre.php" method="post">
+        <p>
 
-                 Catégorie socio-professionelle: 
-                <input type="radio" name="niveau" value=1>College
-                <input type="radio" name="niveau" value=2>Lycée
-                <input type="radio" name="niveau" value=3>Etudes supérieures
-                <input type="radio" name="niveau" value=4>Diplomé
-                <input type="radio" name="niveau" value=5>Autre
-                
+         Voulez vous changer des informations? <br />
+    
+         
+         Mot de passe : <input type="password" name="pass"><br />
+         Confirmation du mot de passe : <input type="password" name="pass_confirm" ><br />
+         email: <input type="text" name="email" ><br />
 
-                
-                <input type="submit" name="changement" value="Go">
-                </p>
-            </form>
-        </div>
+         Catégorie socio-professionelle: 
+        <input type="radio" name="niveau" value=1>College
+        <input type="radio" name="niveau" value=2>Lycée
+        <input type="radio" name="niveau" value=3>Etudes supérieures
+        <input type="radio" name="niveau" value=4>Diplomé
+        <input type="radio" name="niveau" value=5>Autre
+        
+
+        
+        <input type="submit" name="changement" value="Go">
+        </p>
     
     </body>
     </html>

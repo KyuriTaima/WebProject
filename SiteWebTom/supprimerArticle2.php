@@ -5,8 +5,9 @@
     <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet">
 </head>
 <?php
-    include("sesArticles.php");
     
+    ob_start();
+    include("sesArticles.php");
 
 //on test que le bouton envoi est bien été appuyé et que l'utilisateur a bien rentré l'id de l'article a supprimer
     if (isset($_POST['envoie2']) && $_POST['envoie2'] == 'envoie2') {
@@ -22,8 +23,10 @@
                    
                 }
             
-
+                ob_end_flush();
     ?>
+
+<html>
 
     <body>
     
@@ -33,4 +36,5 @@
      <input type="submit" name="envoie2" value="envoie2"><br/>
      </form>
      </body>
-     </html>
+
+    </html>

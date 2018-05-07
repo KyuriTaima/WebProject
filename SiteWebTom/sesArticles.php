@@ -1,4 +1,6 @@
 <?php 
+
+ob_start();
 include("Accueil.php"); 
 if (!isset($_SESSION['login'])) {
     header ('Location: index.php');
@@ -17,7 +19,7 @@ if (!isset($_SESSION['login'])) {
 
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     }
     catch(Exception $e)
     {
@@ -35,6 +37,7 @@ if (!isset($_SESSION['login'])) {
         echo '<p>'. "<a href='profile.php?login=$login'>". "id= ". $donnees['id'].  "       ".  htmlspecialchars($donnees['corpsTexte']) . '<br />' . '</p>';
     }
     $req->closeCursor();
+    ob_end_flush();
     ?>
 
 </body></html>

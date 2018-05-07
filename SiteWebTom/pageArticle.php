@@ -1,4 +1,6 @@
-<?php include("Accueil.php");
+<?php 
+ob_start();
+include("Accueil.php");
 if (!isset($_SESSION['login'])) {
    header ('Location: index.php');
    exit(); 
@@ -8,8 +10,7 @@ if (!isset($_SESSION['login'])) {
 
 <head>
     <title>My document</title>
-    <link rel="stylesheet" href="assets/style.css" /> 
-    <link href="bootstrap/css/bootstrap.min.css" rel="stylesheet"> 
+    <link rel="stylesheet" href="assets/style.css" />  
 
 </head>
 
@@ -19,7 +20,7 @@ if (!isset($_SESSION['login'])) {
     
     try
     {
-        $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+        $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
     } 
     catch(Exception $e)
     {
@@ -30,14 +31,12 @@ if (!isset($_SESSION['login'])) {
 
     $donnees= $rep->fetch();
         ?>
-        <div class="col-md-4"></div>
-        <div class="col-md-4">
+        <div id=article>
         	<h1><?php echo $donnees['login']; ?></h1><br />
         	<p>
         		<?php echo $donnees['corpsTexte']; ?>
         	</p>        	
         </div>
-        <div class="col-md-4"></div>
     <?php
     $rep->closeCursor();  
     
@@ -53,7 +52,7 @@ if (!isset($_SESSION['login'])) {
                    
                 }
 
-
+                ob_end_flush();
     ?>
 
     <html>

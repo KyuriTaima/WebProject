@@ -1,5 +1,7 @@
 <?php 
+ ob_start();
  include("Accueil.php");
+
     // on teste si le visiteur a soumis le formulaire
     if (isset($_POST['inscription']) && $_POST['inscription'] == 'Inscription') {
        // on teste l'existence de nos variables. On teste également si elles ne sont pas vides
@@ -12,7 +14,7 @@
 
              try
                 {
-          $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+                  $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
                 } 
             catch(Exception $e)
       {
@@ -50,6 +52,8 @@
           $erreur = 'Au moins un des champs est vide.';
        } 
     } 
+    
+ob_end_flush();
     ?>
     <html>
     <head>

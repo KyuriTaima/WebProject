@@ -1,6 +1,6 @@
 
 <?php
-
+ob_start();
 
 /* on teste si le visiteur a soumis le formulaire de connexion*/
 if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
@@ -10,7 +10,7 @@ if (isset($_POST['connexion']) && $_POST['connexion'] == 'Connexion') {
 
    try
    {
-    $bdd = new PDO('mysql:host=localhost;dbname=Entraide;charset=utf8', 'root', '',array(PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION));
+    $bdd = new PDO('mysql:host=localhost;dbname=id5300649_root;charset=utf8', 'id5300649_root', 'tomrollet');
   } 
   catch(Exception $e)
   {
@@ -47,6 +47,8 @@ else {
 } 
 
 } 
+
+ob_end_flush();
 ?>
 <html>
 <head>
