@@ -1,25 +1,20 @@
-<?php
-    session_start(); 
-    ?>
 <html lang="en">
 <style></style>
 <!DOCTYPE html>
 <head>
     
-<title>Bootstrap Example</title>
+
+
     <!--Ouverture de la feuille de style CSS -->
-    <link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-    <link rel="stylesheet" href="assets/style.css">
+    <link rel="stylesheet" href="http://127.0.0.1/EntraideMVC/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="http://127.0.0.1/EntraideMVC/assets/style.css">
 
     <meta charset="utf-8">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="bootstrap/js/bootstrap.min.js"></script>
+    <script src="http://127.0.0.1/EntraideMVC/bootstrap/js/bootstrap.min.js"></script>
     
 
-    
-<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-    
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
 
 
 
@@ -48,7 +43,7 @@
 
     <ul class="nav navbar-nav">
     
-    <input type="button" class="btn btn-default btn-lg " value="Entraide" onclick="location.href = 'Entree.php'">
+    <input type="button" class="btn btn-default btn-lg " value="Entraide" onclick="location.href = 'http://127.0.0.1/EntraideMVC/index.php'">
     
     <div class="btn-group">
       <button class="btn btn-danger dropdown-toggle btn-lg" type="button" id="dropdownMathsButton" data-toggle="dropdown" >
@@ -56,9 +51,9 @@
       </button>
       <div class="dropdown-menu " aria-labelledby="dropdownMathsButton">
       
-    <a class="dropdown-item" href="categorie.php?cat=M3"> Niveau 3eme<br/></a>
+    <a class="dropdown-item" href="http://127.0.0.1/EntraideMVC/Controllers/Article.php?article=1"> Niveau 3eme<br/></a>
     
-    <a class="dropdown-item" href="categorie.php?cat=M4">Niveau 4eme<br/></a>
+    <a class="dropdown-item" href="http://127.0.0.1/EntraideMVC/Controllers/Article.php?article=2">Niveau 4eme<br/></a>
 
      </div>
       </div>
@@ -68,9 +63,9 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownPhysiqueButton">
     
-    <a class="dropdown-item" href="categorie.php?cat=P3">Niveau 3eme<br /></a>
+    <a class="dropdown-item" href="http://127.0.0.1/EntraideMVC/Controllers/Article.php?article=3">Niveau 3eme<br /></a>
     
-    <a class="dropdown-item" href="categorie.php?cat=P4">Niveau 4eme<br /></a>
+    <a class="dropdown-item" href="http://127.0.0.1/EntraideMVC/Controllers/Article.php?article=4">Niveau 4eme<br /></a>
      
      </div>
      </div>
@@ -80,10 +75,9 @@
     </button>
     <div class="dropdown-menu" aria-labelledby="dropdownArticleButton">
     
-    <a href="SaisieArticle.php">Saisir une nouvelle question</a><br />
+    <a href="http://127.0.0.1/EntraideMVC/Controllers/NewArticle.php">Saisir une nouvelle question</a><br />
     
-    <a href="sesArticles">Voir ses questions</a><br />
-    <a href="supprimerArticle2.php">Supprimer un de ses articles</a>
+    <a href="http://127.0.0.1/EntraideMVC/Controllers/Article.php?article=own">Voir ses questions</a><br />
      </div>
      </div>
 
@@ -95,14 +89,14 @@
     <?php
                 //Affiche les boutons de connexion et d'inscription que si aucune session n'est ouverte
                 if (!isset($_SESSION['login'])){
-                    echo'  <a href="index.php">Se connecter</a><br />';
+                    echo'  <a href="http://127.0.0.1/EntraideMVC/Controllers/Connexion.php">Se connecter</a><br />';
                 } 
                 ?>  
                     </li>
                     <li>
                     <?php
                     if (!isset($_SESSION['login'])){
-                    echo'<a href="inscription.php">S&rsquo;inscrie</a>';
+                    echo'<a href="http://127.0.0.1/EntraideMVC/Controllers/Inscription.php">S&rsquo;inscrie</a>';
                 } 
                 ?>
                     </li>
@@ -111,7 +105,7 @@
                    //Affiche le bouton de déconnexion que si aucuinne session est actuellement ouverte
                       if (isset($_SESSION['login'])){
                         
-                         echo'<a href="deconnexion.php">Se déconnecter</a><br />';   
+                         echo'<a href="http://127.0.0.1/EntraideMVC/Controllers/Deconnexion.php">Se déconnecter</a><br />';   
                     } 
                     ?>
                     </li>
@@ -120,7 +114,7 @@
                    //Affiche le bouton de déconnexion que si aucuinne session est actuellement ouverte
                       if (isset($_SESSION['login'])){
                         
-                         echo'<a href="membre.php"> Espace membre</a>';   
+                         echo'<a href="http://127.0.0.1/EntraideMVC/Controllers/Compte.php"> Espace membre</a>';   
                     } 
                     ?>
      </div>
