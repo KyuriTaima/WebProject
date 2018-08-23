@@ -82,6 +82,13 @@
      </div>
 
      <div class="btn-group"> 
+     <button class="btn btn-primary dropdown-toggle btn-lg" type="button"  onclick="location.href = 'http://127.0.0.1/EntraideMVC/Controllers/Chat.php'"  >
+      Chat
+  
+    </button>
+     </div>
+
+     <div class="btn-group"> 
     <button class="btn btn-info dropdown-toggle btn-lg" type="button" id="dropdownCompteButton" data-toggle="dropdown" >
       Compte
     </button>
